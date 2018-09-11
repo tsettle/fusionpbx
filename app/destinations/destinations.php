@@ -188,7 +188,7 @@
 
 	echo "				<input type='button' class='btn' value='".$text['button-inbound']."' onclick=\"window.location='destinations.php?type=inbound';\">\n";
 	echo "				<input type='button' class='btn' value='".$text['button-outbound']."' onclick=\"window.location='destinations.php?type=outbound';\">\n";
-	echo "				<input type='button' class='btn' value='".$text['button-local']."' onclick=\"window.location='destinations.php?type=local';\">\n";
+	//echo "				<input type='button' class='btn' value='".$text['button-local']."' onclick=\"window.location='destinations.php?type=local';\">\n";
 	echo "				&nbsp;\n";
 	if (permission_exists('destination_import')) {
 		echo "				<input type='button' class='btn' alt='".$text['button-import']."' onclick=\"window.location='/app/destination_imports/destination_imports.php'\" value='".$text['button-import']."'>\n";
@@ -304,7 +304,7 @@
 	echo "		<td width='33.3%' align='center' nowrap='nowrap'>$paging_controls</td>\n";
 	echo "		<td class='list_control_icons'>";
 	if (permission_exists('destination_add')) {
-		echo 		"<a href='destination_edit.php?type=$destination_type' alt='".$text['button-add']."'>$v_link_label_add</a>";
+		echo 		"<a href='destination_edit.php?type=".escape($destination_type)."' alt='".$text['button-add']."'>$v_link_label_add</a>";
 	}
 	else {
 		echo 		"&nbsp;";
